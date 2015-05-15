@@ -30,6 +30,14 @@
         }
       ]
     },
+    {
+      "Etagerealestate": [
+        {
+          "name": "root",
+          "cmd": "ssh root@45.55.209.234"
+        }
+      ]
+    },
 		{
 			"Vectorpeople": [
         {
