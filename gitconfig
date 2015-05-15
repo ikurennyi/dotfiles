@@ -1,0 +1,21 @@
+[user]
+	name = Eugene Kurennyy
+	email = eugene.kurennyy@gmail.com
+[core]
+	excludesfile = /Users/ek/.gitignore
+	quotepath = false
+[push]
+	default = simple
+[mergetool]
+	keepBackup = true
+[git-tmbundle]
+	gitx-path = /usr/local/bin/
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

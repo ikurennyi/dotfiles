@@ -1,0 +1,42 @@
+{
+	"_comment1": "Valid terminals include: 'Terminal.app' or 'iTerm'",
+	"_comment2": "Hosts will also be read from your ~/.ssh/config or /etc/ssh_config file, if available",
+	"_comment3": "For more information on how to configure, please see http://fitztrev.github.io/shuttle/",
+	"terminal": "iTerm",
+	"launch_at_login": true,
+  "show_ssh_config_hosts": false,
+	"hosts": [
+    {
+      "Eagerbulls": [
+         {
+            "name": "root",
+            "cmd": "ssh root@213.239.218.201"
+         },
+         {
+            "name": "deploy",
+            "cmd": "ssh deploy@213.239.218.201"
+         }
+      ]
+    },
+    {
+      "HH": [
+        {
+          "name": "deploy",
+          "cmd": "ssh deploy@104.236.50.41"
+        },
+        {
+          "name": "ek",
+          "cmd": "ssh ek@104.236.50.41"
+        }
+      ]
+    },
+		{
+			"Vectorpeople": [
+        {
+          "name": "root",
+          "cmd": "ssh root@146.185.141.213"
+        }
+			]
+		}
+	]
+}
