@@ -94,6 +94,7 @@ alias sha='cd ~/projects/shakhovskoy'
 alias vp='cd ~/projects/vectorpeople'
 alias eb='cd ~/projects/eagerbulls'
 alias et='cd ~/projects/etage'
+alias room='cd ~/projects/roommate'
 # alias be='bundle exec'
 alias cpd='cap production deploy'
 
