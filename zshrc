@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew brew-cask osx rails bundler sublime) 
+plugins=(git brew brew-cask osx rails bundler sublime colored-man colorize zsh-syntax-highlighting) 
 
 LANG=ru_RU.UTF-8
 
@@ -92,7 +92,7 @@ alias hho='cd ~/projects/hautehipsters/'
 alias hh='cd ~/projects/hh/'
 alias sha='cd ~/projects/shakhovskoy'
 alias vp='cd ~/projects/vectorpeople'
-alias eb='cd ~/projects/eagerbulls'
+alias eb='cd ~/projects/ebhomesite'
 alias et='cd ~/projects/etage'
 alias room='cd ~/projects/roommate'
 # alias be='bundle exec'
