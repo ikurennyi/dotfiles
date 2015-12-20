@@ -22,11 +22,11 @@
       "HH": [
         {
           "name": "deploy",
-          "cmd": "ssh deploy@104.236.50.41"
+          "cmd": "ssh deploy@104.131.254.180"
         },
         {
           "name": "ek",
-          "cmd": "ssh ek@104.236.50.41"
+          "cmd": "ssh ek@104.131.254.180"
         }
       ]
     },
