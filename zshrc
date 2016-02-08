@@ -84,18 +84,12 @@ source $ZSH/oh-my-zsh.sh
 alias la='ls -lah'
 
 # aliases for projects
-alias estimator='cd ~/projects/estimator/'
-alias deviartstudio='cd ~/projects/deviartstudio/'
-alias deviartstudio='cd ~/projects/deviartstudio/'
 alias tr='cd ~/projects/tracker/'
-alias hho='cd ~/projects/hautehipsters/'
 alias hh='cd ~/projects/hh/'
-alias sha='cd ~/projects/shakhovskoy'
-alias vp='cd ~/projects/vectorpeople'
 alias eb='cd ~/projects/ebhomesite'
 alias et='cd ~/projects/etage'
 alias room='cd ~/projects/roommate'
-alias ang='cd ~/projects/sandbox/angular_egghead'
+alias sev='cd ~/projects/sevdostavka'
 alias oc='cd ~/Dropbox/temp_desktop/opencloud/'
 alias cpd='cap production deploy'
 
