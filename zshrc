@@ -114,4 +114,5 @@ alias gitx='gitx --all'
 export EDITOR='vi'
 
 # rbenv initialization
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+eval "$(rbenv init -)"
