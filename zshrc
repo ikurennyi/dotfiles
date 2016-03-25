@@ -90,7 +90,7 @@ alias eb='cd ~/projects/ebhomesite'
 alias et='cd ~/projects/etage'
 alias room='cd ~/projects/roommate'
 alias sev='cd ~/projects/sevdostavka'
-alias oc='cd ~/Dropbox/temp_desktop/opencloud/'
+alias mmm='cd ~/projects/mindmintmix'
 alias cpd='cap production deploy'
 
 
