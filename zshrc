@@ -92,6 +92,7 @@ alias room='cd ~/projects/roommate'
 alias sev='cd ~/projects/sevdostavka'
 alias mmm='cd ~/projects/mindmintmix'
 alias cpd='cap production deploy'
+alias csd='cap staging deploy'
 
 
 # custom git aliases
