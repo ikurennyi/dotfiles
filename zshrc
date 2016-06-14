@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew brew-cask osx rails bundler sublime colored-man colorize zsh-syntax-highlighting npm)
+plugins=(git brew brew-cask osx rails bundler sublime colored-man colorize zsh-syntax-highlighting npm bower)
 
 LANG=ru_RU.UTF-8
 
@@ -78,7 +78,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="st ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias la='ls -lah'
@@ -88,12 +88,12 @@ alias tr='cd ~/projects/tracker/'
 alias hh='cd ~/projects/hh/'
 alias eb='cd ~/projects/ebhomesite'
 alias et='cd ~/projects/etage'
-alias room='cd ~/projects/roommate'
-alias sev='cd ~/projects/sevdostavka'
 alias mmm='cd ~/projects/mindmintmix'
+alias str='cd ~/projects/stratos'
+
+# aliases for capistrano deploy
 alias cpd='cap production deploy'
 alias csd='cap staging deploy'
-
 
 # custom git aliases
 alias ga='git add'
