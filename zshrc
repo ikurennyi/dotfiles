@@ -89,6 +89,7 @@ alias tr='cd ~/projects/tracker/'
 alias hh='cd ~/projects/hh/'
 alias eb='cd ~/projects/ebhomesite'
 alias et='cd ~/projects/etage'
+alias etr='cd ~/projects/etage_ru'
 alias mmm='cd ~/projects/mindmintmix'
 alias str='cd ~/projects/stratos'
 
