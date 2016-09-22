@@ -92,6 +92,7 @@ alias et='cd ~/projects/etage'
 alias etr='cd ~/projects/etage_ru'
 alias mmm='cd ~/projects/mindmintmix'
 alias str='cd ~/projects/stratos'
+alias docsui='cd ~/projects/docsui'
 
 # aliases for capistrano deploy
 alias cpd='cap production deploy'
