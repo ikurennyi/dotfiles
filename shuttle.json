@@ -44,10 +44,10 @@
       ]
     },
 		{
-			"Vectorpeople": [
+			"MiMiMix": [
         {
-          "name": "root",
-          "cmd": "ssh root@146.185.141.213"
+          "name": "deploy",
+          "cmd": "ssh deploy@95.85.54.187"
         }
 			]
 		}
