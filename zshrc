@@ -94,6 +94,8 @@ alias mmm='cd ~/projects/mindmintmix'
 alias str='cd ~/projects/stratos'
 alias docsui='cd ~/projects/docsui'
 alias hui='cd ~/projects/hui'
+alias huia='cd ~/projects/hui-accounts'
+alias huic='cd ~/projects/hui-cart'
 
 # aliases for capistrano deploy
 alias cpd='cap production deploy'
