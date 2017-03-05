@@ -2,7 +2,7 @@
 	name = Eugene Kurennyy
 	email = eugene.kurennyy@gmail.com
 [core]
-	excludesfile = /Users/ek/.gitignore
+	excludesfile = ~/.gitignore
 	quotepath = false
 [push]
 	default = simple
