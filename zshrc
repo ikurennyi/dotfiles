@@ -84,22 +84,20 @@ alias zshconfig="st ~/.zshrc"
 
 alias la='ls -lah'
 
+
 # aliases for projects
-alias tr='cd ~/projects/tracker/'
-alias hh='cd ~/projects/hh/'
 alias eb='cd ~/projects/ebhomesite'
-alias et='cd ~/projects/etage'
-alias etr='cd ~/projects/etage_ru'
-alias mmm='cd ~/projects/mindmintmix'
-alias str='cd ~/projects/stratos'
-alias docsui='cd ~/projects/docsui'
-alias hui='cd ~/projects/hui'
-alias huia='cd ~/projects/hui-accounts'
-alias huic='cd ~/projects/hui-cart'
+
+alias erp='cd ~/projects/erp-frontend'
+alias erp-h='cd ~/projects/erp-html'
+alias hui-o='cd ~/projects/order-frontend'
+alias hui-a='cd ~/projects/accounts-frontend'
+
 
 # aliases for capistrano deploy
 alias cpd='cap production deploy'
 alias csd='cap staging deploy'
+
 
 # custom git aliases
 alias ga='git add'
