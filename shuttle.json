@@ -34,12 +34,8 @@
     {
       "Etagerealestate": [
         {
-          "name": "deploy",
-          "cmd": "ssh deploy@45.55.209.234"
-        },
-        {
           "name": "root",
-          "cmd": "ssh root@45.55.209.234"
+          "cmd": "ssh root@178.62.210.136"
         }
       ]
     },
