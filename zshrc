@@ -88,6 +88,7 @@ alias la='ls -lah'
 alias eb='cd ~/projects/ebhomesite'
 
 alias erp='cd ~/projects/erp-frontend'
+alias stride='cd ~/projects/stride-web'
 alias erp-h='cd ~/projects/erp-html'
 alias hui-o='cd ~/projects/order-frontend'
 alias hui-a='cd ~/projects/accounts-frontend'
