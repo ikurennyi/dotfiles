@@ -85,15 +85,13 @@ alias zshconfig="st ~/.zshrc"
 
 alias la='ls -lah'
 
+alias ys='yarn start'
+
 
 # aliases for projects
-alias eb='cd ~/projects/ebhomesite'
+alias eb='cd ~/projects/private/ebhomesite'
 
-alias erp='cd ~/projects/erp-frontend'
-alias stride='cd ~/projects/stride-web'
-alias erp-h='cd ~/projects/erp-html'
-alias hui-o='cd ~/projects/order-frontend'
-alias hui-a='cd ~/projects/accounts-frontend'
+alias erp='cd ~/projects/clients/erp-frontend'
 
 
 # aliases for capistrano deploy
