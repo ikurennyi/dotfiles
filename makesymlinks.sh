@@ -1,16 +1,22 @@
 #!/bin/bash
 ############################
 # .make.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
+# This script creates symlinks from the home directory to any desired dotfiles in ~/projects/private/dotfiles
 ############################
 
 ########## Variables
 
-dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
+dir=~/projects/private/dotfiles                         # dotfiles directory
+olddir=~/projects/private/dotfiles_old                  # old dotfiles backup directory
 files="gemrc gitconfig gitignore shuttle.json zshrc"    # list of files/folders to symlink in homedir
 
 ##########
+
+# create directories
+mkdir -p ~/projects/public
+mkdir -p ~/projects/clients
+mkdir -p ~/projects/private
+
 
 # create dotfiles_old in homedir
 echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
