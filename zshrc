@@ -80,7 +80,7 @@ LANG=en_US.UTF-8
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="st ~/.zshrc"
+alias zshconfig="code ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias la='ls -lah'
@@ -110,6 +110,7 @@ alias gci='git commit'
 alias gst='git status'
 alias gitk='gitk --all'
 alias gitx='gitx --all'
+alias glog='git log --graph --abbrev-commit --date=relative --all'
 
 export EDITOR='vi'
 
