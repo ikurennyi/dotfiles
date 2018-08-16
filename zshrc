@@ -84,6 +84,7 @@ alias zshconfig="code ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias la='ls -lah'
+alias ci='code-insiders .'
 
 alias ys='yarn start'
 alias ns='npm start'
