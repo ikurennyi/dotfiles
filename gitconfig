@@ -25,3 +25,5 @@
 	required = true
 [credential]
 	helper = osxkeychain
+[commit]
+	template = /Users/ek/.stCommitMsg

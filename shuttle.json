@@ -8,6 +8,14 @@
   "show_ssh_config_hosts": false,
 	"hosts": [
     {
+      "Nobus": [
+        {
+          "name": "root",
+          "cmd": "ssh root@167.99.211.110"
+        }
+      ]
+    },
+    {
       "Eagerbulls": [
          {
             "name": "root",

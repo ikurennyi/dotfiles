@@ -55,6 +55,8 @@ export PATH="$HOME/.yarn/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+# load ssh identity
+ssh-add>/dev/null 2>&1
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -93,7 +95,7 @@ alias ns='npm start'
 # aliases for projects
 alias eb='cd ~/projects/private/ebhomesite'
 
-alias erp='cd ~/projects/clients/erp-frontend'
+alias dte='cd ~/projects/clients/dte-frontend'
 
 
 # aliases for capistrano deploy
