@@ -53,6 +53,7 @@ export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Appl
 export PATH="$HOME/.yarn/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 # load ssh identity
 ssh-add>/dev/null 2>&1
@@ -91,9 +92,9 @@ alias ns='npm start'
 
 
 # aliases for projects
-alias eb='cd ~/projects/private/ebhomesite'
+alias n-t='cd ~/projects/private/nobus/nobus-tracker'
 
-alias dte='cd ~/projects/clients/dte-frontend'
+alias dte='cd ~/projects/clients/haulmer/dte-frontend'
 
 
 # aliases for capistrano deploy
