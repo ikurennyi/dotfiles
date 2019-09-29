@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew osx rails bundler colored-man-pages colorize zsh-autosuggestions npm)
+plugins=(git brew osx colored-man-pages colorize zsh-autosuggestions npm)
 
 # User configuration
 
@@ -86,6 +86,7 @@ alias zshconfig="code ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias la='ls -lah'
+# alias mine='rubymine'
 
 alias ys='yarn start'
 alias ns='npm start'
@@ -93,6 +94,7 @@ alias ns='npm start'
 
 # aliases for projects
 alias n-t='cd ~/projects/private/nobus/nobus-tracker'
+alias n-tapi='cd ~/projects/private/nobus/nobus-tracker-api'
 
 alias dte='cd ~/projects/clients/haulmer/dte-frontend'
 
@@ -113,6 +115,7 @@ alias gst='git status'
 alias gitk='gitk --all'
 alias gitx='gitx --all'
 alias glog='git log --graph --abbrev-commit --date=relative --all'
+alias git-users='git shortlog -sne --all'
 
 export EDITOR='vi'
 
@@ -125,6 +128,26 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
 
 ###-tns-completion-start-###
 if [ -f /Users/ek/.tnsrc ]; then 
