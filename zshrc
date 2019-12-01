@@ -49,8 +49,12 @@ plugins=(git brew osx colored-man-pages colorize zsh-autosuggestions npm)
 
 # User configuration
 
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/latest/bin"
-export PATH="$HOME/.yarn/bin:$PATH"
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export ANDROID_HOME=/usr/local/share/android-sdk
+
+export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
+export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -97,6 +101,7 @@ alias n-t='cd ~/projects/private/nobus/nobus-tracker'
 alias n-tapi='cd ~/projects/private/nobus/nobus-tracker-api'
 
 alias dte='cd ~/projects/clients/haulmer/dte-frontend'
+alias pos='cd ~/projects/clients/haulmer/sales-mobile-pos'
 
 
 # aliases for capistrano deploy
@@ -150,7 +155,7 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 ###-tns-completion-start-###
-if [ -f /Users/ek/.tnsrc ]; then 
-    source /Users/ek/.tnsrc 
+if [ -f /Users/ek/.tnsrc ]; then
+    source /Users/ek/.tnsrc
 fi
 ###-tns-completion-end-###
