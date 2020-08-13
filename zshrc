@@ -45,7 +45,9 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew osx colored-man-pages colorize zsh-autosuggestions npm)
+
+
+plugins=(git brew osx colored-man-pages colorize npm)
 
 # User configuration
 
@@ -56,7 +58,9 @@ export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
 # load ssh identity
 ssh-add>/dev/null 2>&1

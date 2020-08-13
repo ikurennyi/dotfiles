@@ -28,3 +28,5 @@
 	helper = osxkeychain
 [commit]
 	template = /Users/ek/.stCommitMsg
+[pull]
+	rebase = true
