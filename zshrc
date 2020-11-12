@@ -92,6 +92,8 @@ LANG=en_US.UTF-8
 alias zshconfig="code ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias code="code-insiders"
+
 alias la='ls -lah'
 # alias mine='rubymine'
 
@@ -104,7 +106,11 @@ alias n-t='cd ~/projects/private/nobus/nobus-tracker'
 alias n-tapi='cd ~/projects/private/nobus/nobus-tracker-api'
 alias nobus='cd ~/projects/private/nobus-website'
 
-alias dte='cd ~/projects/clients/haulmer/dte-frontend'
+# haulmer
+alias h-dir='cd ~/projects/clients/haulmer'
+alias h-dte='cd ~/projects/clients/haulmer/dte-frontend-platform'
+alias h-web='cd ~/projects/clients/haulmer/website-frontend-websites'
+alias h-work='cd ~/projects/clients/haulmer/workspace-frontend-platform'
 
 
 
@@ -125,6 +131,7 @@ alias gitk='gitk --all'
 alias gitx='gitx --all'
 alias glog='git log --graph --abbrev-commit --date=relative --all'
 alias git-users='git shortlog -sne --all'
+alias grc='git rebase --continue'
 
 export EDITOR='vi'
 
@@ -137,6 +144,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# use node version from NVM by reading .nvmrc file in project's folder
 autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
