@@ -90,10 +90,9 @@ LANG=en_US.UTF-8
 alias zshconfig="code ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias code="code-insiders"
-
 alias la='ls -lah'
 # alias mine='rubymine'
+alias 11ty='npx @11ty/eleventy'
 
 alias ys='yarn start'
 alias ns='npm start'
