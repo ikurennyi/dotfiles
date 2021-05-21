@@ -91,6 +91,7 @@ alias zshconfig="code ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias la='ls -lah'
+alias lsl='ls -l'
 # alias mine='rubymine'
 alias 11ty='npx @11ty/eleventy'
 
@@ -102,6 +103,8 @@ alias ns='npm start'
 alias n-t='cd ~/projects/private/nobus/nobus-tracker'
 alias n-tapi='cd ~/projects/private/nobus/nobus-tracker-api'
 alias nobus='cd ~/projects/private/nobus-website'
+alias mixio='cd ~/projects/public/mixio'
+alias mixiof='cd ~/projects/public/mixio-front'
 
 # haulmer
 alias h-dir='cd ~/projects/clients/haulmer'
@@ -143,26 +146,26 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # use node version from NVM by reading .nvmrc file in project's folder
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
+# autoload -U add-zsh-hook
+# load-nvmrc() {
+#   local node_version="$(nvm version)"
+#   local nvmrc_path="$(nvm_find_nvmrc)"
 
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+#   if [ -n "$nvmrc_path" ]; then
+#     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
 
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+#     if [ "$nvmrc_node_version" = "N/A" ]; then
+#       nvm install
+#     elif [ "$nvmrc_node_version" != "$node_version" ]; then
+#       nvm use
+#     fi
+#   elif [ "$node_version" != "$(nvm version default)" ]; then
+#     echo "Reverting to nvm default version"
+#     nvm use default
+#   fi
+# }
+# add-zsh-hook chpwd load-nvmrc
+# load-nvmrc
 
 ###-tns-completion-start-###
 if [ -f /Users/ek/.tnsrc ]; then
