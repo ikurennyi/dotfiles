@@ -96,7 +96,7 @@ alias lsl='ls -l'
 alias 11ty='npx @11ty/eleventy'
 
 alias ys='yarn start'
-alias ns='npm start'
+alias npm-s='npm start'
 
 
 # aliases for projects
