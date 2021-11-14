@@ -47,7 +47,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 
 
-plugins=(git brew osx colored-man-pages colorize npm zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git brew macos colored-man-pages colorize npm zsh-autosuggestions zsh-syntax-highlighting)
 
 # User configuration
 
@@ -135,6 +135,8 @@ alias git-users='git shortlog -sne --all'
 alias grc='git rebase --continue'
 
 export EDITOR='vi'
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # rbenv initialization
 # if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
