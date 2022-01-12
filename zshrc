@@ -178,6 +178,10 @@ if [ -f /Users/ek/.tnsrc ]; then
 fi
 ###-tns-completion-end-###
 
-function git-switch() {
+export PNPM_HOME="/Users/ik/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+
+function g-switch() {
   git switch $(git branch | grep $1)
 }
