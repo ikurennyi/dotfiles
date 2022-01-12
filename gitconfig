@@ -31,3 +31,5 @@
 	template = /Users/ek/.stCommitMsg
 [pull]
 	rebase = true
+[init]
+	defaultBranch = main

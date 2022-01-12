@@ -177,3 +177,7 @@ if [ -f /Users/ek/.tnsrc ]; then
     source /Users/ek/.tnsrc
 fi
 ###-tns-completion-end-###
+
+function git-switch() {
+  git switch $(git branch | grep $1)
+}
