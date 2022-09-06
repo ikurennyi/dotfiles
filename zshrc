@@ -178,10 +178,10 @@ if [ -f /Users/ek/.tnsrc ]; then
 fi
 ###-tns-completion-end-###
 
-export PNPM_HOME="/Users/ik/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-
-
 function g-switch() {
   git switch $(git branch | grep $1)
 }
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
