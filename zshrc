@@ -98,6 +98,9 @@ alias 11ty='npx @11ty/eleventy'
 alias ys='yarn start'
 alias npm-s='npm start'
 
+# upwork
+alias g-u='cd ~/projects/clients/upwork'
+alias g-t='cd ~/projects/clients/upwork/taxnuxt'
 
 # aliases for projects
 alias n-t='cd ~/projects/private/nobus/nobus-tracker'
@@ -185,3 +188,12 @@ function g-switch() {
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+source /Users/ik/.docker/init-zsh.sh || true # Added by Docker Desktop
+
+# python
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+export PATH="${HOME}/.pyenv/shims:${PATH}"
+
