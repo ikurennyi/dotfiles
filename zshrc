@@ -188,6 +188,7 @@ function g-switch() {
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+source /Users/ik/projects/private/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source /Users/ik/.docker/init-zsh.sh || true # Added by Docker Desktop
 
@@ -196,4 +197,3 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 export PATH="${HOME}/.pyenv/shims:${PATH}"
-
