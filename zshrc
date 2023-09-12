@@ -52,11 +52,8 @@ plugins=(git brew macos colored-man-pages colorize npm zsh-autosuggestions zsh-s
 # User configuration
 
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-export ANDROID_HOME="/Users/ek/Library/Android/sdk"
 
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
+export PATH="$HOME/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ik/projects/clients/upwork/apache-maven-3.9.4/bin"
 
 ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
@@ -90,36 +87,22 @@ LANG=en_US.UTF-8
 alias zshconfig="code ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias ci="code-insiders ."
+
 alias la='ls -lah'
 alias lsl='ls -l'
-# alias mine='rubymine'
-alias 11ty='npx @11ty/eleventy'
 
 alias ys='yarn start'
-alias npm-s='npm start'
+alias r-d='npm run dev'
+alias r-e='npm run test:e2e:parallel'
+alias r-u='npm run test:unit'
 
 # upwork
 alias g-u='cd ~/projects/clients/upwork'
 alias g-t='cd ~/projects/clients/upwork/taxnuxt'
-
-# aliases for projects
-alias n-t='cd ~/projects/private/nobus/nobus-tracker'
-alias n-tapi='cd ~/projects/private/nobus/nobus-tracker-api'
-alias nobus='cd ~/projects/private/nobus-website'
-alias mixio='cd ~/projects/public/mixio'
-alias mixiof='cd ~/projects/public/mixio-front'
-
-# haulmer
-alias h-dir='cd ~/projects/clients/haulmer'
-alias h-dte='cd ~/projects/clients/haulmer/dte-frontend-platform'
-alias h-web='cd ~/projects/clients/haulmer/website-frontend-websites'
-alias h-work='cd ~/projects/clients/haulmer/workspace-frontend-platform'
-
-
-
-# aliases for capistrano deploy
-alias cpd='cap production deploy'
-alias csd='cap staging deploy'
+alias g-clo='cd ~/projects/clients/upwork/clotho'
+alias g-bn='cd ~/projects/clients/upwork/bpa-nuxt'
+alias g-bu='cd ~/projects/clients/upwork/bpa-ui'
 
 
 # custom git aliases
@@ -140,10 +123,6 @@ alias grc='git rebase --continue'
 export EDITOR='vi'
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# rbenv initialization
-# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-eval "$(rbenv init -)"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -175,25 +154,16 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 # END block
 
-###-tns-completion-start-###
-if [ -f /Users/ek/.tnsrc ]; then
-    source /Users/ek/.tnsrc
-fi
-###-tns-completion-end-###
-
 function g-switch() {
   git switch $(git branch | grep $1)
 }
 
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-source /Users/ik/projects/private/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-source /Users/ik/.docker/init-zsh.sh || true # Added by Docker Desktop
+# source /Users/ik/.docker/init-zsh.sh || true # Added by Docker Desktop
 
 # python
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 export PATH="${HOME}/.pyenv/shims:${PATH}"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
