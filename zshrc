@@ -60,7 +60,7 @@ plugins=(git brew macos colored-man-pages colorize npm zsh-autosuggestions zsh-s
 
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
-export PATH="$HOME/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ik/projects/clients/upwork/apache-maven-3.9.4/bin"
+export PATH="$HOME/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ik/projects/clients/upwork/apache-maven-3.9.6/bin:/Users/ik/.local/bin/"
 
 ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
@@ -94,10 +94,16 @@ LANG=en_US.UTF-8
 alias zshconfig="code ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias vim="nvim"
 alias ci="code-insiders ."
 
 alias la='ls -lah'
 alias lsl='ls -l'
+
+# homebrew
+alias ,bic='brew install --cask'
+alias ,bu='brew uninstall'
+alias ,bs='brew search'
 
 alias r-d='npm run dev'
 alias r-e='npm run test:e2e:parallel'
@@ -106,6 +112,7 @@ alias r-u='npm run test:unit'
 # upwork
 alias g-u='cd ~/projects/clients/upwork'
 alias g-t='cd ~/projects/clients/upwork/taxnuxt'
+alias v-t='cd ~/projects/clients/upwork/taxnuxt && vim .'
 alias g-clo='cd ~/projects/clients/upwork/clotho'
 alias g-bn='cd ~/projects/clients/upwork/bpa-nuxt'
 alias g-bu='cd ~/projects/clients/upwork/bpa-ui'
@@ -173,5 +180,8 @@ eval "$(pyenv init -)"
 export PATH="${HOME}/.pyenv/shims:${PATH}"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+PATH=~/.console-ninja/.bin:$PATH
