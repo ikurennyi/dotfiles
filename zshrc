@@ -105,17 +105,18 @@ alias ,bic='brew install --cask'
 alias ,bu='brew uninstall'
 alias ,bs='brew search'
 
-alias r-d='npm run dev'
-alias r-e='npm run test:e2e:parallel'
-alias r-u='npm run test:unit'
+# npm-related commands
+alias ,rd='npm run dev'
+alias ,re='npm run test:e2e:parallel'
+alias ,ru='npm run test:unit'
 
 # upwork
-alias g-u='cd ~/projects/clients/upwork'
-alias g-t='cd ~/projects/clients/upwork/taxnuxt'
-alias v-t='cd ~/projects/clients/upwork/taxnuxt && vim .'
-alias g-clo='cd ~/projects/clients/upwork/clotho'
-alias g-bn='cd ~/projects/clients/upwork/bpa-nuxt'
-alias g-bu='cd ~/projects/clients/upwork/bpa-ui'
+alias ,gu='cd ~/projects/clients/upwork'
+alias ,gt='cd ~/projects/clients/upwork/taxnuxt'
+alias ,vt='cd ~/projects/clients/upwork/taxnuxt && vim .'
+alias ,gclo='cd ~/projects/clients/upwork/clotho'
+alias ,gbn='cd ~/projects/clients/upwork/bpa-nuxt'
+alias ,gbu='cd ~/projects/clients/upwork/bpa-ui'
 
 
 # custom git aliases
@@ -132,6 +133,9 @@ alias gitx='gitx --all'
 alias glog='git log --graph --abbrev-commit --date=relative --all'
 alias git-users='git shortlog -sne --all'
 alias grc='git rebase --continue'
+
+alias fsb=~/projects/private/dotfiles/fsb.sh
+alias fshow=~/projects/private/dotfiles/fshow.sh
 
 export EDITOR='vi'
 
