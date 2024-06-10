@@ -54,7 +54,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 
 
-plugins=(git brew macos colored-man-pages colorize npm zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git brew macos colored-man-pages colorize npm zsh-autosuggestions zsh-syntax-highlighting fzf-tab)
 
 # User configuration
 
@@ -64,6 +64,7 @@ export PATH="$HOME/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ik/project
 
 ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
+source "$HOME/.cargo/env"
 # load ssh identity
 ssh-add>/dev/null 2>&1
 
@@ -99,6 +100,7 @@ alias ci="code-insiders ."
 
 alias la='ls -lah'
 alias lsl='ls -l'
+alias ,ls="eza --color=always --long --no-filesize --icons=always --no-time"
 
 # homebrew
 alias ,bic='brew install --cask'
@@ -189,3 +191,8 @@ export PATH="${HOME}/.pyenv/shims:${PATH}"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 PATH=~/.console-ninja/.bin:$PATH
+eval "$(gh copilot alias -- zsh)"
+
+
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward
