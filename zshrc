@@ -64,7 +64,7 @@ export PATH="$HOME/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ik/project
 
 ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
-source "$HOME/.cargo/env"
+# source "$HOME/.cargo/env"
 # load ssh identity
 ssh-add>/dev/null 2>&1
 
@@ -190,8 +190,8 @@ export PATH="${HOME}/.pyenv/shims:${PATH}"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-PATH=~/.console-ninja/.bin:$PATH
-eval "$(gh copilot alias -- zsh)"
+# PATH=~/.console-ninja/.bin:$PATH
+# eval "$(gh copilot alias -- zsh)"
 
 
 bindkey "^[[A" history-search-backward
