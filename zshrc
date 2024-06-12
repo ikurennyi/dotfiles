@@ -135,6 +135,8 @@ alias gitx='gitx --all'
 alias glog='git log --graph --abbrev-commit --date=relative --all'
 alias git-users='git shortlog -sne --all'
 alias grc='git rebase --continue'
+alias grm='git rebase --merge'
+alias gc='git clone'
 
 alias fsb=~/projects/private/dotfiles/fsb.sh
 alias fshow=~/projects/private/dotfiles/fshow.sh
