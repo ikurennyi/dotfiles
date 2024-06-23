@@ -51,6 +51,7 @@
         f = "!git ls-files | grep -i" # git f <filename> # search <filename> in all files
  bb = !/Users/davidlee/.dotfiles/scripts/better-branch.sh
  fza = "!git ls-files -m -o --exclude-standard | fzf -m --print0 | xargs -0 git add"
+	hist = log --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(red)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --graph --date=short
 
 [core]
  pager = diff-so-fancy | less --tabs=4 -RF

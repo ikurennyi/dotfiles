@@ -137,6 +137,7 @@ alias git-users='git shortlog -sne --all'
 alias grc='git rebase --continue'
 alias grm='git rebase --merge'
 alias gc='git clone'
+alias ghist="git log --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(red)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --graph --date=short"
 
 alias fsb=~/projects/private/dotfiles/fsb.sh
 alias fshow=~/projects/private/dotfiles/fshow.sh
