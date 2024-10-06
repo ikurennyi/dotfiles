@@ -54,13 +54,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 
 
-plugins=(git brew macos colored-man-pages colorize npm zsh-autosuggestions zsh-syntax-highlighting fzf-tab)
+plugins=(git brew macos colored-man-pages colorize npm zsh-autosuggestions zsh-syntax-highlighting fzf-tab zsh-better-npm-completion)
 
 # User configuration
 
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
-export PATH="$HOME/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ik/projects/clients/upwork/apache-maven-3.9.6/bin:/Users/ik/.local/bin/"
+export PATH="$HOME/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ik/projects/clients/upwork/apache-maven-3.9.7/bin:/Users/ik/.local/bin/:/Applications/RubyMine.app/Contents/MacOS"
 
 ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
@@ -94,6 +94,7 @@ LANG=en_US.UTF-8
 # Example aliases
 alias zshconfig="code ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zj="zellij"
 
 alias vim="nvim"
 alias ci="code-insiders ."
@@ -130,8 +131,7 @@ alias gco='git checkout'
 alias gsw='git switch'
 alias gci='git commit'
 alias gst='git status'
-alias gitk='gitk --all'
-alias gitx='gitx --all'
+alias gpr='git pull --rebase'
 alias glog='git log --graph --abbrev-commit --date=relative --all'
 alias git-users='git shortlog -sne --all'
 alias grc='git rebase --continue'
@@ -196,6 +196,12 @@ export PATH="${HOME}/.pyenv/shims:${PATH}"
 # PATH=~/.console-ninja/.bin:$PATH
 # eval "$(gh copilot alias -- zsh)"
 
+# rbenv start
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Added by `rbenv init` on Mon Sep  9 10:01:09 CEST 2024
+eval "$(rbenv init - --no-rehash zsh)"
+# rbenv end
 
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
