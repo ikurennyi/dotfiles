@@ -60,7 +60,7 @@ plugins=(git brew macos colored-man-pages colorize npm zsh-autosuggestions zsh-s
 
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
-export PATH="$HOME/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ik/projects/clients/upwork/apache-maven-3.9.7/bin:/Users/ik/.local/bin/:/Applications/RubyMine.app/Contents/MacOS"
+export PATH="$HOME/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ik/projects/clients/upwork/apache-maven-3.9.7/bin:/Users/ik/.local/bin/:/Users/ik/Library/Application Support/JetBrains/Toolbox/scripts"
 
 ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
@@ -193,7 +193,7 @@ export PATH="${HOME}/.pyenv/shims:${PATH}"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# PATH=~/.console-ninja/.bin:$PATH
+# 
 # eval "$(gh copilot alias -- zsh)"
 
 # rbenv start
