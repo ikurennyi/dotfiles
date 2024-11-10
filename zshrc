@@ -113,15 +113,6 @@ alias ,rd='npm run dev'
 alias ,re='npm run test:e2e:parallel'
 alias ,ru='npm run test:unit'
 
-# upwork
-alias ,gu='cd ~/projects/clients/upwork'
-alias ,gt='cd ~/projects/clients/upwork/taxnuxt'
-alias ,vt='cd ~/projects/clients/upwork/taxnuxt && vim .'
-alias ,gclo='cd ~/projects/clients/upwork/clotho'
-alias ,gbn='cd ~/projects/clients/upwork/bpa-nuxt'
-alias ,gbu='cd ~/projects/clients/upwork/bpa-ui'
-
-
 # custom git aliases
 alias ga='git add'
 alias gb='git branch'
@@ -189,11 +180,12 @@ eval "$(pyenv init -)"
 export PATH="${HOME}/.pyenv/shims:${PATH}"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# 
+#
 # eval "$(gh copilot alias -- zsh)"
 
 # rbenv start
