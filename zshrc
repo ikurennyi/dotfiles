@@ -58,10 +58,16 @@ plugins=(git brew macos colored-man-pages colorize npm zsh-autosuggestions zsh-s
 
 # User configuration
 
+# TODO: Check if I need the next line
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
-export PATH="$HOME/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ik/projects/clients/upwork/apache-maven-3.9.7/bin:/Users/ik/.local/bin/:/Users/ik/Library/Application Support/JetBrains/Toolbox/scripts"
+# MAVEN_HOME="$HOME/projects/clients/upwork/apache-maven-3.9.7/bin"
+# JETBRAINS_SCRIPTS="$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+export PATH="$HOME/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin/"
+# export PATH="$PATH:$MAVEN_HOME:$JETBRAINS_SCRIPTS"
 
+
+# TODO: zsh again? group maybe?
 ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
 # source "$HOME/.cargo/env"
@@ -93,11 +99,10 @@ LANG=en_US.UTF-8
 #
 # Example aliases
 alias zshconfig="code ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+
 alias zj="zellij"
 
-alias vim="nvim"
-alias ci="code-insiders ."
+alias n="nvim"
 
 alias la='ls -lah'
 alias lsl='ls -l'
@@ -135,7 +140,19 @@ alias fshow=~/projects/private/dotfiles/fshow.sh
 
 export EDITOR='vi'
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# when using x86_64 (Apple's GPTK), otherwise just keep the first "if"'s eval
+if [ "$(arch)" = "arm64" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+
+    # rbenv
+    eval "$(rbenv init - --no-rehash zsh)"
+
+    # fzf
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+    source <(fzf --zsh)
+else
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -174,26 +191,19 @@ function g-switch() {
 # source /Users/ik/.docker/init-zsh.sh || true # Added by Docker Desktop
 
 # python
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-export PATH="${HOME}/.pyenv/shims:${PATH}"
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+# export PATH="${HOME}/.pyenv/shims:${PATH}"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source <(fzf --zsh)
-
+# TODO: powerline again?
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#
+# TODO: what is this?
 # eval "$(gh copilot alias -- zsh)"
 
-# rbenv start
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# Added by `rbenv init` on Mon Sep  9 10:01:09 CEST 2024
-eval "$(rbenv init - --no-rehash zsh)"
-# rbenv end
-
+# TODO: is these NeoVim related?
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
+
