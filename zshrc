@@ -103,10 +103,16 @@ alias zshconfig="code ~/.zshrc"
 alias zj="zellij"
 
 alias n="nvim"
+alias zed="open -a /Applications/Zed.app -n"
+
+alias v="open $1 -a \"Visual Studio Code\""
+alias c="open $1 -a \"Cursor\""
 
 alias la='ls -lah'
 alias lsl='ls -l'
 alias ,ls="eza --color=always --long --no-filesize --icons=always --no-time"
+
+alias del="rm -rf"
 
 # homebrew
 alias ,bic='brew install --cask'
@@ -183,6 +189,10 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 # END block
+
+# Angular completion START
+source <(ng completion script)
+# Angular completion END
 
 function g-switch() {
   git switch $(git branch | grep $1)
