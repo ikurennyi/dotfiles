@@ -135,6 +135,9 @@ alias gci='git commit'
 alias gst='git status'
 alias gpr='git pull --rebase'
 alias glog='git log --graph --abbrev-commit --date=relative --all'
+alias glog2="git log --graph --abbrev-commit --decorate=short --pretty=format:'%C(yellow)%h%Creset %C(cyan)(%an <%ae>)%Creset %s' --all"
+alias glogN="git log --graph --abbrev-commit --decorate=short --pretty=format:'%C(yellow)%h%Creset %C(cyan)(%an)%Creset %s' --all"
+alias glogE="git log --graph --abbrev-commit --decorate=short --pretty=format:'%C(yellow)%h%Creset %C(cyan)(%ae)%Creset %s' --all"
 alias git-users='git shortlog -sne --all'
 alias grc='git rebase --continue'
 alias grm='git rebase --merge'
