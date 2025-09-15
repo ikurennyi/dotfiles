@@ -58,12 +58,16 @@ plugins=(git brew macos colored-man-pages colorize npm zsh-autosuggestions zsh-s
 
 # User configuration
 
+export NODE_COMPILE_CACHE=~/.cache/nodejs-compile-cache
+
 # TODO: Check if I need the next line
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 # MAVEN_HOME="$HOME/projects/clients/upwork/apache-maven-3.9.7/bin"
 # JETBRAINS_SCRIPTS="$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
-export PATH="$HOME/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin/"
+RUST_HOME="$HOME/.cargo/bin"
+export PATH="$HOME/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin/:$RUST_HOME"
+export PATH="/usr/local/opt/game-porting-toolkit/bin:$PATH"
 # export PATH="$PATH:$MAVEN_HOME:$JETBRAINS_SCRIPTS"
 
 
@@ -78,6 +82,32 @@ ssh-add>/dev/null 2>&1
 # export LANG=en_US.UTF-8
 LANG=en_US.UTF-8
 
+# START Neovim
+# set the default neovim as a name of the folder that contains config files (init.lua)
+# export NVIM_APPNAME="nvim.bak"
+# or
+alias nv='NVIM_APPNAME=neovim-base nvim'
+
+NVIMS=("base" "lazyvim" "nvchad" "astronvim" "lunarvim")
+# from Purpleschoool course. Better than vv
+function nvims() {
+  config=$(printf "%s\n" "${NVIMS[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "base" ]]; then
+    config="base"
+  fi
+
+  NVIM_APPNAME="neovim-${config}" nvim $@
+}
+# a good article: https://michaeluloth.com/neovim-switch-configs/
+# END Neovim
+#
+
+gclonecd() {
+  git clone "$1" && cd "$(basename "$1" .git)"
+}
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -111,6 +141,7 @@ alias c="open $1 -a \"Cursor\""
 alias la='ls -lah'
 alias lsl='ls -l'
 alias ,ls="eza --color=always --long --no-filesize --icons=always --no-time"
+alias file_count='find . -type f -not -path "./node_modules/*" | wc -l'
 
 alias del="rm -rf"
 
@@ -147,6 +178,8 @@ alias ghist="git log --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(r
 alias fsb=~/projects/private/dotfiles/fsb.sh
 alias fshow=~/projects/private/dotfiles/fshow.sh
 
+alias website-download='wget -m -k -E -p -np '
+alias wbesite-download-full='wget --mirror --convert-links --adjust-extension --page-requisites --no-parent '
 export EDITOR='vi'
 
 # when using x86_64 (Apple's GPTK), otherwise just keep the first "if"'s eval
