@@ -87,3 +87,5 @@ diff-so-fancy
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[safe]
+	directory = *

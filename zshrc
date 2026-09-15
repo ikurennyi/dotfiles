@@ -1,9 +1,11 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
+
+eval "$(starship init zsh)"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -12,7 +14,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -54,14 +56,14 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 
 
-plugins=(git brew macos colored-man-pages colorize npm zsh-autosuggestions zsh-syntax-highlighting fzf-tab zsh-better-npm-completion)
+plugins=(git brew macos colored-man-pages colorize npm zsh-autosuggestions zsh-syntax-highlighting fzf-tab zsh-better-npm-completion docker docker-compose)
 
 # User configuration
 
 export NODE_COMPILE_CACHE=~/.cache/nodejs-compile-cache
 
 # TODO: Check if I need the next line
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+# export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 # MAVEN_HOME="$HOME/projects/clients/upwork/apache-maven-3.9.7/bin"
 # JETBRAINS_SCRIPTS="$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
@@ -128,7 +130,7 @@ gclonecd() {
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="code ~/.zshrc"
+alias zshconfig="vi ~/.zshrc"
 
 alias zj="zellij"
 
@@ -142,6 +144,7 @@ alias la='ls -lah'
 alias lsl='ls -l'
 alias ,ls="eza --color=always --long --no-filesize --icons=always --no-time"
 alias file_count='find . -type f -not -path "./node_modules/*" | wc -l'
+alias ,lg="lazygit"
 
 alias del="rm -rf"
 
@@ -181,6 +184,21 @@ alias fshow=~/projects/private/dotfiles/fshow.sh
 alias website-download='wget -m -k -E -p -np '
 alias wbesite-download-full='wget --mirror --convert-links --adjust-extension --page-requisites --no-parent '
 export EDITOR='vi'
+
+# START attempt to increase the built-in history size
+#set history size
+export HISTSIZE=10000
+#save history after logout
+export SAVEHIST=10000
+#history file
+export HISTFILE=~/.zhistory
+#append into history file
+setopt INC_APPEND_HISTORY
+#save only one command if 2 common are same and consistent
+setopt HIST_IGNORE_DUPS
+#add timestamp for each entry
+setopt EXTENDED_HISTORY
+# END history
 
 # when using x86_64 (Apple's GPTK), otherwise just keep the first "if"'s eval
 if [ "$(arch)" = "arm64" ]; then
@@ -227,7 +245,7 @@ load-nvmrc
 # END block
 
 # Angular completion START
-source <(ng completion script)
+# source <(ng completion script)
 # Angular completion END
 
 function g-switch() {
@@ -244,7 +262,7 @@ function g-switch() {
 
 # TODO: powerline again?
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # TODO: what is this?
 # eval "$(gh copilot alias -- zsh)"
@@ -253,3 +271,15 @@ function g-switch() {
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
+
+# Added by Windsurf
+export PATH="/Users/ik/.codeium/windsurf/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/ik/.antigravity/antigravity/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/ik/.lmstudio/bin"
+# End of LM Studio CLI section
+
+ROSETTA_ADVERTISE_AVX=1
