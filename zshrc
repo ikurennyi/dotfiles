@@ -67,18 +67,20 @@ export NODE_COMPILE_CACHE=~/.cache/nodejs-compile-cache
 
 # MAVEN_HOME="$HOME/projects/clients/upwork/apache-maven-3.9.7/bin"
 # JETBRAINS_SCRIPTS="$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
-RUST_HOME="$HOME/.cargo/bin"
-export PATH="$HOME/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin/:$RUST_HOME"
+export PATH="$HOME/usr/local/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin/"
 export PATH="/usr/local/opt/game-porting-toolkit/bin:$PATH"
+export PATH="/Users/ik/.nvm/versions/node/v24.21.0/bin:$PATH"
+
+# asdf
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 # export PATH="$PATH:$MAVEN_HOME:$JETBRAINS_SCRIPTS"
 
 
 # TODO: zsh again? group maybe?
 ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
-# source "$HOME/.cargo/env"
 # load ssh identity
-ssh-add>/dev/null 2>&1
+# ssh-add>/dev/null 2>&1
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -131,6 +133,8 @@ gclonecd() {
 #
 # Example aliases
 alias zshconfig="vi ~/.zshrc"
+alias env-reload="source ~/.zshrc"
+alias source-reload="source ~/.zshrc"
 
 alias zj="zellij"
 
@@ -185,6 +189,15 @@ alias website-download='wget -m -k -E -p -np '
 alias wbesite-download-full='wget --mirror --convert-links --adjust-extension --page-requisites --no-parent '
 export EDITOR='vi'
 
+# eza aliases
+alias els='eza --icons=auto --group-directories-first'
+alias ell='eza -lah --icons=auto --git --group-directories-first'
+alias etree='eza --tree --icons=auto --group-directories-first '
+
+alias mo-un='mo uninstall'
+
+# alias-end
+
 # START attempt to increase the built-in history size
 #set history size
 export HISTSIZE=10000
@@ -217,8 +230,8 @@ fi
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # START block
 # use node version from NVM by reading .nvmrc file in project's folder
@@ -244,10 +257,6 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 # END block
 
-# Angular completion START
-# source <(ng completion script)
-# Angular completion END
-
 function g-switch() {
   git switch $(git branch | grep $1)
 }
@@ -271,15 +280,25 @@ function g-switch() {
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
-
-# Added by Windsurf
-export PATH="/Users/ik/.codeium/windsurf/bin:$PATH"
-
-# Added by Antigravity
-export PATH="/Users/ik/.antigravity/antigravity/bin:$PATH"
-
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/ik/.lmstudio/bin"
 # End of LM Studio CLI section
 
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+
+alias dsh-web="npx @deepseek-ai/dsh web"
+export DEEPSEEK_API_KEY=""
+
 ROSETTA_ADVERTISE_AVX=1
+
+# pnpm
+export PNPM_HOME='/Users/ik/Library/pnpm'
+case ":$PATH:" in
+  ":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
+
+. "$HOME/.local/bin/env"
+
+export PATH="/Users/ik/.local/bin:$PATH"  # added by Boost app (/Users/ik/.local/bin)
