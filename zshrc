@@ -56,7 +56,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Add wisely, as too many plugins slow down shell startup.
 
 
-plugins=(git brew macos colored-man-pages colorize npm zsh-autosuggestions zsh-syntax-highlighting fzf-tab zsh-better-npm-completion docker docker-compose)
+plugins=(git brew macos colored-man-pages colorize zsh-autosuggestions zsh-syntax-highlighting fzf-tab)
 
 # User configuration
 
@@ -67,11 +67,15 @@ export NODE_COMPILE_CACHE=~/.cache/nodejs-compile-cache
 
 # MAVEN_HOME="$HOME/projects/clients/upwork/apache-maven-3.9.7/bin"
 # JETBRAINS_SCRIPTS="$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
-export PATH="$HOME/usr/local/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin/"
-export PATH="/usr/local/opt/game-porting-toolkit/bin:$PATH"
-export PATH="/Users/ik/.nvm/versions/node/v24.21.0/bin:$PATH"
 
-# asdf
+if [ "$(arch)" = "arm64" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
+
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/usr/local/opt/game-porting-toolkit/bin:$PATH"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 # export PATH="$PATH:$MAVEN_HOME:$JETBRAINS_SCRIPTS"
 
@@ -213,18 +217,9 @@ setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
 # END history
 
-# when using x86_64 (Apple's GPTK), otherwise just keep the first "if"'s eval
 if [ "$(arch)" = "arm64" ]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-
-    # rbenv
-    eval "$(rbenv init - --no-rehash zsh)"
-
-    # fzf
-    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-    source <(fzf --zsh)
-else
-    eval "$(/usr/local/bin/brew shellenv)"
+  eval "$(rbenv init - --no-rehash zsh)"
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -280,9 +275,12 @@ function g-switch() {
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/ik/.lmstudio/bin"
-# End of LM Studio CLI section
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+export PATH="$PNPM_HOME/bin:$PATH"
+
+# LM Studio CLI (lms)
+export PATH="$PATH:$HOME/.lmstudio/bin"
 
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
@@ -291,14 +289,4 @@ export DEEPSEEK_API_KEY=""
 
 ROSETTA_ADVERTISE_AVX=1
 
-# pnpm
-export PNPM_HOME='/Users/ik/Library/pnpm'
-case ":$PATH:" in
-  ":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac
-# pnpm end
-
 . "$HOME/.local/bin/env"
-
-export PATH="/Users/ik/.local/bin:$PATH"  # added by Boost app (/Users/ik/.local/bin)
