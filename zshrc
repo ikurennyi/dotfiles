@@ -264,6 +264,10 @@ function g-switch() {
 # eval "$(pyenv init -)"
 # export PATH="${HOME}/.pyenv/shims:${PATH}"
 
+autoload -Uz compinit
+compinit
+eval "$(uv generate-shell-completion zsh)"
+
 # TODO: powerline again?
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -290,3 +294,40 @@ export DEEPSEEK_API_KEY=""
 ROSETTA_ADVERTISE_AVX=1
 
 . "$HOME/.local/bin/env"
+
+
+# copy remote git URL to past in the browser
+gurl() {
+    local url
+
+    url=$(git remote get-url origin 2>/dev/null) || {
+        echo "Git remote 'origin' не найден"
+        return 1
+    }
+
+    # SSH: git@github.com:user/repo.git
+    # HTTPS: https://github.com/user/repo.git
+    # SSH URL: ssh://git@github.com/user/repo.git
+    url=$(printf '%s' "$url" | sed -E \
+        -e 's#^git@([^:]+):#https://\1/#' \
+        -e 's#^ssh://git@([^/]+)/#https://\1/#' \
+        -e 's#\.git$##')
+
+    if [[ "$url" != https://* && "$url" != http://* ]]; then
+        echo "Failed to convert URL: $url"
+        return 1
+    fi
+
+    if command -v pbcopy >/dev/null 2>&1; then
+        printf '%s' "$url" | pbcopy
+    elif command -v wl-copy >/dev/null 2>&1; then
+        printf '%s' "$url" | wl-copy
+    elif command -v xclip >/dev/null 2>&1; then
+        printf '%s' "$url" | xclip -selection clipboard
+    else
+        echo "Утилита для работы с буфером обмена не найдена"
+        return 1
+    fi
+
+    echo "Copied: $url"
+}
